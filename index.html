@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,11 +17,28 @@
             color: #ffd700;
             padding: 25px;
             text-align: center;
+            overflow: hidden;
         }
         header h1 {
             margin: 0;
+        }
+        .moving-text {
+            display: inline-block;
             font-size: 32px;
             letter-spacing: 2px;
+            color: #ffd700;
+            white-space: nowrap;
+            animation: slide 10s linear infinite, glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes slide {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ffd700; }
+            50% { text-shadow: 0 0 20px #ffd700; }
+            100% { text-shadow: 0 0 5px #ffd700; }
         }
         .hero {
             padding: 60px 20px;
@@ -111,7 +129,7 @@
 </head>
 <body>
 <header>
-    <h1>JAIY CLOTHING</h1>
+    <h1 class="moving-text">JAIY CLOTHING</h1>
     <p>Powered by Jaiy Casual Ltd</p>
 </header>
 <section class="hero">
